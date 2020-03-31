@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatApp_Barrientos.MainPage">
+    <AbsoluteLayout>
+        <StackLayout BackgroundColor="White">
+     
+            <!--<Grid
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Width,Factor=1}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,Property=Height,Factor=1}">-->
+                <Image Source="mirai2.jpg" Aspect="AspectFill"></Image>
+            <!--</Grid>-->
+
+
+            <Frame x:Name="emailframe"
+                Padding = "0"
+                       CornerRadius="10"
+                       IsClippedToBounds="true"
+                   OutlineColor="Black"
+                   Margin="6">
+                <Entry Placeholder="Email" FontSize="15" x:Name="EmailInput" Keyboard="Email"  Margin="0" Focused="StartCall1" ReturnType="Next"/>
+            
+            </Frame>
+      
+
+            <Frame x:Name="passframe" 
+                   Padding = "0"
+                       CornerRadius="10"
+                       IsClippedToBounds="true"
+                   OutlineColor="Black"
+                   Margin="6,0">
+
+                <Grid>
+                    <Entry Placeholder="Password" FontSize="15" x:Name="PassInput" Margin="0" IsPassword="True" Focused="StartCall2" ReturnType="Done"/>
+                    <Button x:Name="hideshow" Text="Show" FontSize="10" Margin="330,0,10,0" WidthRequest="1" HeightRequest="1" Clicked="hidesh"></Button>
+                </Grid>
+
+
+            </Frame>
+   
+        
+        
+        
+            <Label Text="Forgot Password"  TextColor="Gray" FontSize="13"  Margin="0,10,10,10" HorizontalTextAlignment="End"/>
+            <Button Text="Sign In" x:Name="signin" Clicked="Button_Clicked" Margin="6,0,6,0" BackgroundColor="LightGreen" CornerRadius="5"></Button>
+            <Button Text="Create An Account" x:Name="signup" Clicked="signup_Clicked" Margin="6,5,6,0" BackgroundColor="LightGray" CornerRadius="5"></Button>
+
+            <Grid>
+            
+                    <Label VerticalOptions="Center" />
+                    <BoxView HeightRequest="2"
+                    VerticalOptions="Center"
+                    Opacity="1"
+                    Color="Gray"
+                    Margin="9,5,235,0"/>
+            
+                <Label Text="or" TextColor="Black" Margin="10,0,10,0" HorizontalTextAlignment="Center"/>
+
+                    <Label VerticalOptions="Center" />
+                    <BoxView HeightRequest="2"
+                        VerticalOptions="Center"
+                        Opacity="1"
+                        Color="Gray"
+                        Margin="235,5,9,0"/>
+            
+            </Grid>
+
+            <Grid>
+                <Frame CornerRadius="5"  VerticalOptions="Start" Padding="0" HorizontalOptions="Start" Margin="10,5,0,0" BackgroundColor="Transparent">
+                    <Frame CornerRadius="5" HorizontalOptions="Start" Padding="0" IsClippedToBounds="True" BackgroundColor="Black">
+
+                    <Image Source="GoogleSignIn.png" WidthRequest="185">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Tapped="OnLogin"
+                                        NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                </Frame>
+                </Frame>
+                <Frame CornerRadius="5"  VerticalOptions="Start" Padding="0" HorizontalOptions="End" Margin="0,5,10,0" BackgroundColor="Transparent">
+                    <Frame CornerRadius="5" HorizontalOptions="End" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+
+                        <Image Source="FacebookSignIn.png" WidthRequest="185" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Tapped="OnLoginFB"
+                                        NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </Frame>
+                </Frame>
+           
+
+            </Grid>
+
+         
+
+        </StackLayout>
+
+        <StackLayout
+        x:Name="aiLayout"
+        IsVisible="False"
+        AbsoluteLayout.LayoutBounds="0,0,1,1"
+        AbsoluteLayout.LayoutFlags="All"
+        BackgroundColor="Black" Opacity="0.5">
+            <ActivityIndicator
+            x:Name="ai"
+            IsRunning="False"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

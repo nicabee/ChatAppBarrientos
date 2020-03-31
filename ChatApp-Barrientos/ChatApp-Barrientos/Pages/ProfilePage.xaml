@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="profilePage"
+             Title="Profile"
+             x:Class="ChatApp_Barrientos.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+            <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" BackgroundColor="#1C86EE" HorizontalOptions="Center" VerticalOptions="Start" Padding="4" >
+                <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" BackgroundColor="#60AFFE" HorizontalOptions="Center" VerticalOptions="Start" Margin="0" Padding="5" IsClippedToBounds="True">
+                    <Image Source="yumeko.png" HeightRequest="20" WidthRequest="20" ></Image>
+                </Frame>
+            </Frame>
+            <StackLayout Orientation="Horizontal" Padding="0" Spacing="5"  Margin="0,10,15,0" HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+                <Image Source="EditIcon.png" WidthRequest="30" />
+                <Label x:Name="NameLabel" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" Margin="0,0,0,5"  BindingContext="{x:Reference Name=profilePage}" Text="{Binding Name}"/>
+            </StackLayout>
+
+            <Label x:Name="EmailLabel" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Email}"/>
+            
+            <Button Text="Sign Out" CornerRadius="10" x:Name="signout" TextColor="Black" Margin="15,0,15,0" x:FieldModifier="public"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
