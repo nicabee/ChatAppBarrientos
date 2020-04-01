@@ -1022,11 +1022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
       "projectName": "ChatApp-Barrientos.iOS",
-      "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
+      "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
       "packagesPath": "C:\\Users\\Monica Barrientos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1047,8 +1047,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
-              "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
+            "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
+              "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
             }
           }
         }

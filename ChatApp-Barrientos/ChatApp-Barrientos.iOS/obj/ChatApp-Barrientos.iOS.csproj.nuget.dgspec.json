@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj": {}
+    "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj": {
+    "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
         "projectName": "ChatApp-Barrientos.iOS",
-        "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
+        "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\ChatApp-Barrientos.iOS.csproj",
         "packagesPath": "C:\\Users\\Monica Barrientos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\obj\\",
+        "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
-                "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
+              "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
+                "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
+    "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj",
+        "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj",
         "projectName": "ChatApp-Barrientos",
-        "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj",
+        "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj",
         "packagesPath": "C:\\Users\\Monica Barrientos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\obj\\",
+        "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

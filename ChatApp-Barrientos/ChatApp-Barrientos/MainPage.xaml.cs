@@ -67,14 +67,14 @@ namespace ChatApp_Barrientos
             {
                 emailframe.BorderColor = Color.Red;
                 await DisplayAlert("Error", "Invalid Email", "Okay");
-            }else if (!EmailInput.Text.Equals(em1))
+            }else if (!EmailInput.Text.Equals(em1) || !PassInput.Text.Equals(ps))
             {
                 ai.IsRunning = true;
                 aiLayout.IsVisible = true;
                 await Task.Delay(1000);
                 aiLayout.IsVisible = false;
                 ai.IsRunning = false;
-                await DisplayAlert("Error", "Email doesn't exist", "Okay");
+                await DisplayAlert("Error", "Email/Password is wrong", "Okay");
             }
             else
             {

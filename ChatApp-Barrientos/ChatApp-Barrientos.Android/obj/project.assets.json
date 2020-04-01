@@ -1938,11 +1938,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\ChatApp-Barrientos.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\ChatApp-Barrientos.Android.csproj",
       "projectName": "ChatApp-Barrientos.Android",
-      "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\ChatApp-Barrientos.Android.csproj",
+      "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\ChatApp-Barrientos.Android.csproj",
       "packagesPath": "C:\\Users\\Monica Barrientos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\obj\\",
+      "outputPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1963,8 +1963,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
-              "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
+            "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj": {
+              "projectPath": "C:\\Users\\Monica Barrientos\\source\\repos\\Chat\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos\\ChatApp-Barrientos.csproj"
             }
           }
         }
