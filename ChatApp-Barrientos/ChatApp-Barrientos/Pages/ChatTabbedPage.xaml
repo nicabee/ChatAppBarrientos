@@ -14,5 +14,5 @@
 
     <!--Pages can be added as references or inline-->
     <local:ChatPage Title="Chat" Icon="ChatIcon"/>
-    <local:ProfilePage x:Name="profilePage" Title="ProfilePage" Icon="PersonIcon"/>
+    <local:ProfilePage x:Name="profilePage" Title="Profile" Icon="PersonIcon"/>
 </TabbedPage>
