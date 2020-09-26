@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Plugin.CloudFirestore;
+using ChatApp_Barrientos.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ChatApp_Barrientos.Models;
+using ChatApp_Barrientos.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,6 +16,7 @@ namespace ChatApp_Barrientos
    
     public partial class SignUp : ContentPage
 {
+        DataClass dataClass = DataClass.GetInstance;
         public SignUp()
         {
             InitializeComponent();
@@ -167,25 +171,62 @@ namespace ChatApp_Barrientos
                 await Task.Delay(3000);
                 aiLayout.IsVisible = false;
                 ai.IsRunning = false;
-                await DisplayAlert("Success", "Sign up successful. Verification email sent.", "Okay");
-                await Navigation.PushAsync(new MainPage(EmailInput.Text, NameInput.Text, PassInput.Text),true);
+                //await DisplayAlert("Success", "Sign up successful. Verification email sent.", "Okay");
+                //var reg = DependencyService.Get<firebasebarrientos>();
+                //string token =  await reg.doRegister(EmailInput.Text, PassInput.Text);
+                FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
+                res = await DependencyService.Get<firebasebarrientos>().SignUpWithEmailPassword(NameInput.Text, EmailInput.Text, PassInput.Text);
+                if (res.Status != true)
+                {
+                    await DisplayAlert("Error", res.Response, "Okay");
+                }
+                else
+                {
+                    
+                    try
+                    {
+                        await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("users")
+                         .GetDocument(dataClass.loggedInUser.uid)
+                         .SetDataAsync(dataClass.loggedInUser);
+
+                        await DisplayAlert("Success", res.Response, "Okay");
+                        await Navigation.PopModalAsync(true);
+                    }
+                    catch (Exception ex)
+                    {
+                        await DisplayAlert("Error", ex.Message, "Okay");
+                    }
+                }
+                //if (token == "1")
+                //{
+                //    await Navigation.PushAsync(new MainPage(EmailInput.Text, NameInput.Text, PassInput.Text), true);
+                //}
+                //else
+                //{
+                //    await DisplayAlert("Sign Up", token+ " Retry?", "Yes","No");
+                //}
+
+                //await Navigation.PushAsync(new MainPage(), true);
             }
         }
-        private async void OnSignUp(object sender, EventArgs args)
-        {
-            try
-            {
-                await DisplayAlert("Success", "Sign up successful. Verification email sent.", "Okay");
-                await Navigation.PushAsync(new MainPage(email2, name2,pass2), true);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //private async void OnSignUp(object sender, EventArgs args)
+        //{
+        //    try
+        //    {
+        //        await DisplayAlert("Success", "Sign up successful. Verification email sent.", "Okay");
+        //        await Navigation.PushAsync(new MainPage(email2, name2,pass2), true);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        
         private async void Button_Clicked2(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage(email2, name2,pass2), true);
+            await Navigation.PushAsync(new MainPage(), true);
         }
 
         void StartCall1(object sender, EventArgs args)

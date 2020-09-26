@@ -78,9 +78,9 @@
 
                             <Image Source="GoogleSignUp.png" WidthRequest="185">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer
+                                    <!--<TapGestureRecognizer
                                         Tapped="OnSignUp"
-                                        NumberOfTapsRequired="1" />
+                                        NumberOfTapsRequired="1" />-->
                                 </Image.GestureRecognizers>
                             </Image>
 
@@ -91,9 +91,9 @@
 
                             <Image Source="FacebookSignUp.png" WidthRequest="185" >
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer
+                                    <!--<TapGestureRecognizer
                                         Tapped="OnSignUp"
-                                        NumberOfTapsRequired="1" />
+                                        NumberOfTapsRequired="1" />-->
                                 </Image.GestureRecognizers>
                             </Image>
 

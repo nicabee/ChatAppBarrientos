@@ -42,11 +42,15 @@
 
 
             </Frame>
-   
-        
-        
-        
-            <Label Text="Forgot Password"  TextColor="Gray" FontSize="13"  Margin="0,10,10,10" HorizontalTextAlignment="End"/>
+
+
+
+
+            <Label Text="Forgot Password"  TextColor="Gray" FontSize="13"  Margin="0,10,10,10" HorizontalTextAlignment="End">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onForgotPassword"/>
+                </Label.GestureRecognizers>
+            </Label>
             <Button Text="Sign In" x:Name="signin" Clicked="Button_Clicked" Margin="6,0,6,0" BackgroundColor="LightGreen" CornerRadius="5"></Button>
             <Button Text="Create An Account" x:Name="signup" Clicked="signup_Clicked" Margin="6,5,6,0" BackgroundColor="LightGray" CornerRadius="5"></Button>
 
@@ -76,9 +80,9 @@
 
                     <Image Source="GoogleSignIn.png" WidthRequest="185">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer
+                                <!--<TapGestureRecognizer
                                         Tapped="OnLogin"
-                                        NumberOfTapsRequired="1" />
+                                        NumberOfTapsRequired="1" />-->
                             </Image.GestureRecognizers>
                         </Image>
 
@@ -89,9 +93,9 @@
 
                         <Image Source="FacebookSignIn.png" WidthRequest="185" >
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer
+                                <!--<TapGestureRecognizer
                                         Tapped="OnLoginFB"
-                                        NumberOfTapsRequired="1" />
+                                        NumberOfTapsRequired="1" />-->
                             </Image.GestureRecognizers>
                         </Image>
 

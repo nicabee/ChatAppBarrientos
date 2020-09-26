@@ -22,7 +22,7 @@
 
             <Label x:Name="EmailLabel" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" BindingContext="{x:Reference Name=profilePage}" Text="{Binding Email}"/>
             
-            <Button Text="Sign Out" CornerRadius="10" x:Name="signout" TextColor="Black" Margin="15,0,15,0" x:FieldModifier="public"></Button>
+            <Button Text="Sign Out" CornerRadius="10" x:Name="signout" Clicked="LogoutButton_Clicked" TextColor="Black" Margin="15,0,15,0" x:FieldModifier="public"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

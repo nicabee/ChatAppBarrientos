@@ -1,16 +1,36 @@
-﻿using System;
+﻿using ChatApp_Barrientos.Interfaces;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ChatApp_Barrientos.Helpers;
 
 namespace ChatApp_Barrientos
 {
     public partial class App : Application
     {
+        
+        DataClass dataClass = DataClass.GetInstance;
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            //auth = DependencyService.Get<firebasebarrientos>();
+            //if (auth.IsSignIn())
+            //{
+            //    MainPage = new NavigationPage(new ChatTabbedPage());
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new MainPage());
+            //}
+            //  MainPage = new NavigationPage(new MainPage());
+            if (dataClass.isSignedIn)
+            {
+                Application.Current.MainPage = new ChatTabbedPage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnStart()

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1018553901408",
+    "firebase_url": "https://chatappbarrientos.firebaseio.com",
+    "project_id": "chatappbarrientos",
+    "storage_bucket": "chatappbarrientos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018553901408:android:7660b0697a0ac2de157e05",
+        "android_client_info": {
+          "package_name": "com.companyname.chatapp_barrientos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018553901408-foqqhecc5b4ppkhbpm7m2asdapqr9vm3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUja8xvS7iGpEjZ2ca7OMnkSik7KD205M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018553901408-foqqhecc5b4ppkhbpm7m2asdapqr9vm3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
