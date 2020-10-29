@@ -7,9 +7,60 @@
              x:Class="ChatApp_Barrientos.ChatPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Chat Page"
+            <Frame x:Name="emailframe"
+                Padding = "0"
+                       CornerRadius="10"
+                       IsClippedToBounds="true"
+                   OutlineColor="Black"
+                   Margin="6">
+                <Entry Placeholder="Search User Email" FontSize="15" x:Name="emailInput" Margin="0" ClearButtonVisibility="WhileEditing"/>
+            </Frame>
+            <!--<ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="true" x:Name="contactsList" ItemTapped="ContactsList_ItemTapped"
+                      SeparatorVisibility="None" Margin="5,5,5,0"
+                      IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="60">
+                                <Frame Padding="0" CornerRadius="5" IsClippedToBounds="True" HasShadow="False" BorderColor="LightBlue" HorizontalOptions="Fill" VerticalOptions="FillAndExpand"
+                                      Margin="10,5,10,5" >
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="Frame" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                            <Setter Property="BorderColor" Value="LightGreen"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="5"/>
+                                            <RowDefinition Height="5"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding contactName[0]}" Margin="5,0,0,0" Grid.Row="0" Grid.Column="0"
+                                               HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="End" 
+                                               FontSize="Large">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding contactName[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Label Text="{Binding contactName[0]}" Margin="5,0,0,0" Grid.Row="1" Grid.Column="0"
+                                               HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Medium">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding contactName[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <!--<Label Text="Chat Page"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" />-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

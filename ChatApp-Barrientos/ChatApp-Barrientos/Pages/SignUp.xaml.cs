@@ -192,7 +192,7 @@ namespace ChatApp_Barrientos
                          .SetDataAsync(dataClass.loggedInUser);
 
                         await DisplayAlert("Success", res.Response, "Okay");
-                        await Navigation.PopModalAsync(true);
+                        await Navigation.PopAsync(); //popasync
                     }
                     catch (Exception ex)
                     {
@@ -226,7 +226,7 @@ namespace ChatApp_Barrientos
         
         private async void Button_Clicked2(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage(), true);
+            await Navigation.PopAsync();
         }
 
         void StartCall1(object sender, EventArgs args)

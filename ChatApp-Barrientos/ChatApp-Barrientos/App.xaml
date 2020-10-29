@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChatApp_Barrientos.Converters"
              mc:Ignorable="d"
              x:Class="ChatApp_Barrientos.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <local:IsOwnerConverter x:Key="isOwnerConverter"/>
+            <local:IsViewerConverter x:Key="IsViewerConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

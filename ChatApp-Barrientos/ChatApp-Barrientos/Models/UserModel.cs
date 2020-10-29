@@ -30,5 +30,10 @@ namespace ChatApp_Barrientos.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        List<string> _contacts { get; set; }
+
+        public List<string> contacts { get { return _contacts; } set { _contacts = value; OnPropertyChanged(nameof(contacts)); } }
+
     }
 }
