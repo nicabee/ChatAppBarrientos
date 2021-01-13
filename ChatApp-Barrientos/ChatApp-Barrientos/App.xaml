@@ -4,12 +4,32 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ChatApp_Barrientos.Converters"
+             xmlns:local1="clr-namespace:ChatApp_Barrientos.CustomRenderers"
+             xmlns:scale="clr-namespace:ChatApp_Barrientos.Helpers.ScaleHelper"
              mc:Ignorable="d"
              x:Class="ChatApp_Barrientos.App">
     <Application.Resources>
         <ResourceDictionary>
+            <scale:ScaleXAML x:Key="scale"/>
             <local:IsOwnerConverter x:Key="isOwnerConverter"/>
             <local:IsViewerConverter x:Key="IsViewerConverter"/>
+            <Style TargetType="local1:NoUentry">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="ReturnType" Value="Next"/>
+                <Setter Property="FontSize" Value="Subtitle"/>
+            </Style>
+            <Style x:Key="EntryFrame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="10,0"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

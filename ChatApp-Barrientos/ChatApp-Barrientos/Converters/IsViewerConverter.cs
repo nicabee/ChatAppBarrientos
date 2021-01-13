@@ -18,9 +18,10 @@ namespace ChatApp_Barrientos.Converters
            
             if (value != null)
             {
-                ConversationModel conversation = value as ConversationModel;
-
-                if (conversation.converseeID.Equals(dataClass.loggedInUser.uid))
+                
+                string converseeID = value as string;
+                if (converseeID.Equals(dataClass.loggedInUser.uid))
+                    
                     retVal = true;
             }
 

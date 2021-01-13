@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:ChatApp_Barrientos.Converters"
+             x:Name="messagesPage"
+             mc:Ignorable="d"
+             x:Class="ChatApp_Barrientos.MessagesPage">
+    <ContentPage.BindingContext>
+        <x:Reference Name="messagesPage" />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IsViewerConverter x:Key="isViewerConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" BackgroundColor="#1976D2" Margin="0" Padding="10,5">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding ConversationPartner.contactName[0]}" FontSize="Title" TextColor="White"
+                           VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="StartAndExpand">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding ConversationPartner.contactID[1], Converter={StaticResource isViewerConverter}}" Value="False">
+                                <Setter Property="Text"  Value="{Binding ConversationPartner.contactName[1]}"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                    <Label Text="&#215;" FontAttributes="Bold" 
+                           FontSize="Title"
+                           HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                           TextColor="White">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PopModalCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <Label Text="You can now start a conversation with this person." Grid.Row="1" 
+                   IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding MessagesIsEmpty}" Value="True">
+                        <Setter Property="IsVisible" Value="True"/>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <StackLayout Grid.Row="1">
+                <ListView HorizontalOptions="Fill" VerticalOptions="Start" HasUnevenRows="True"
+                          SeparatorVisibility="None"  Margin="5,0" ItemsSource="{Binding ConversationsList}"
+                          x:Name="ConversationsListView" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ContentView>
+
+                                    <Frame BackgroundColor="LightBlue" Margin="5,5,30,5" HorizontalOptions="Start" Padding="0">
+                                        <Frame.Triggers>
+                                            <DataTrigger TargetType="Frame" Value="True"
+                                                         Binding="{Binding converseeID, Converter={StaticResource isViewerConverter}}">
+                                                <Setter Property="BackgroundColor" Value="LightGreen"/>
+                                                <Setter Property="HorizontalOptions" Value="End"/>
+                                                <Setter Property="Margin" Value="30,5,5,5" />
+                                            </DataTrigger>
+                                        </Frame.Triggers>
+                                        <Label Text="{Binding message}" Margin="5"
+                                               HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalTextAlignment="End"
+                                               FontSize="Body"/>
+                                    </Frame>
+
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid>
+
+                </Grid>
+                <Grid Padding="5" BackgroundColor="AliceBlue" VerticalOptions="End">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout HorizontalOptions="FillAndExpand" Grid.Column="0" Padding="0">
+                        <ScrollView VerticalOptions="CenterAndExpand" Margin="0">
+                            <Editor Text="{Binding Message}" VerticalOptions="CenterAndExpand"
+                                    MaxLength="240" AutoSize="TextChanges" Placeholder="Write something here ..."/>
+                        </ScrollView>
+                    </StackLayout>
+                    <Frame Grid.Column="1" BackgroundColor="Transparent" Padding="0">
+                        <Button Text="Send" CornerRadius="10" Margin="0" VerticalOptions="Center"
+                                TextColor="White" BackgroundColor="#1976D2" Command="{Binding SendCommand}"/>
+                    </Frame>
+                </Grid>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

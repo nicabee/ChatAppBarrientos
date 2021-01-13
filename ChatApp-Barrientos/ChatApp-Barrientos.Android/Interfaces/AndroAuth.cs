@@ -45,7 +45,11 @@ namespace ChatApp_Barrientos.Droid
                         email = FirebaseAuth.Instance.CurrentUser.Email,
                         name = dataClass.loggedInUser.name,
                         userType = dataClass.loggedInUser.userType,
+                        //
+                        contacts = dataClass.loggedInUser.contacts,
+                        //
                         created_at = dataClass.loggedInUser.created_at
+                        //created_at = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
                     };
                     dataClass.isSignedIn = true;
                 }
@@ -82,7 +86,9 @@ namespace ChatApp_Barrientos.Droid
                         email = result.User.Email,
                         name = yourModel.name,
                         userType = yourModel.userType,
-                        created_at = yourModel.created_at
+                        created_at = yourModel.created_at,
+                        //
+                        contacts = yourModel.contacts
                     };
                     dataClass.isSignedIn = true;
                 }
@@ -155,7 +161,9 @@ namespace ChatApp_Barrientos.Droid
                     email = email,
                     name = defaultName,
                     userType = 0,
-                    created_at = DateTime.UtcNow
+                    //
+                    created_at = DateTime.UtcNow.ToString()
+                    //created_at = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
                 };
                 return response;
             }

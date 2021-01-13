@@ -17,11 +17,15 @@ namespace ChatApp_Barrientos {
     public partial class ChatTabbedPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::ChatApp_Barrientos.ChatPage chatPage;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::ChatApp_Barrientos.ProfilePage profilePage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ChatTabbedPage));
+            chatPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ChatApp_Barrientos.ChatPage>(this, "chatPage");
             profilePage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ChatApp_Barrientos.ProfilePage>(this, "profilePage");
         }
     }

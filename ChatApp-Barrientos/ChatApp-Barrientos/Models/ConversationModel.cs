@@ -17,9 +17,18 @@ namespace ChatApp_Barrientos.Models
         string _converseeID { get; set; }
         public string converseeID { get { return _converseeID; } set { _converseeID = value; OnPropertyChanged(nameof(converseeID)); } }
 
-        DateTime _created_at { get; set; }
-        public DateTime created_at { get { return _created_at; } set { _created_at = value; OnPropertyChanged(nameof(created_at)); } }
-
+        string _created_at { get; set; }
+        public string created_at { get { return _created_at; } set { _created_at = value; OnPropertyChanged(nameof(created_at)); } }
+        //long _created_at { get; set; }
+        //public long created_at
+        //{
+        //    get { return _created_at; }
+        //    set
+        //    {
+        //        _created_at = value;
+        //        OnPropertyChanged(nameof(created_at));
+        //    }
+        //}
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")

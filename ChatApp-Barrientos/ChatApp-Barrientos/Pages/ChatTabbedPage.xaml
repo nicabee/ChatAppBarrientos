@@ -13,6 +13,6 @@
              android:TabbedPage.BarSelectedItemColor="White">
 
     <!--Pages can be added as references or inline-->
-    <local:ChatPage Title="Chat" Icon="ChatIcon"/>
+    <local:ChatPage x:Name="chatPage" Title="Chat" Icon="ChatIcon"/>
     <local:ProfilePage x:Name="profilePage" Title="Profile" Icon="PersonIcon"/>
 </TabbedPage>

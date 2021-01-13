@@ -3,9 +3,84 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ChatApp_Barrientos.CustomRenderers"
+             xmlns:converter="clr-namespace:ChatApp_Barrientos.Converters"
+             x:Name="chatPage"
              mc:Ignorable="d"
              x:Class="ChatApp_Barrientos.ChatPage">
+    <ContentPage.BindingContext>
+        <x:Reference Name="chatPage" />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:IsOwnerConverter x:Key="isOwnerConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
+        <Grid Padding="{Binding Converter={StaticResource scale}, ConverterParameter='thickness=10,10,10,10'}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame Style="{StaticResource EntryFrame}" Padding="10,0" Margin="0" Grid.Row="0">
+                <local:NoUentry Text="{Binding Text}" Placeholder="Search by email" FontSize="Subtitle"
+                                ReturnCommand="{Binding SearchCommand}" ReturnType="Search" Keyboard="Email" ClearButtonVisibility="WhileEditing"/>
+            </Frame>
+            
+            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,10">
+                <!--<Label x:Name="EmailLabel" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" BindingContext="{x:Reference Name=chatPage}" Text="{Binding ContactListIsEmpty}"/>-->
+                <!--<Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False">-->
+
+                <Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsEmpty}">
+                <!--<Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsEmpty}">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label" Binding="{Binding IsEmpty}" Value="True">
+                            <Setter Property="IsVisible" Value="True"/>
+                        </DataTrigger>
+                    </Label.Triggers>-->
+                  
+                        <!--<Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding ContactList.Count}">
+                                <Setter Property="IsVisible" Value="true"/>
+                            </DataTrigger>
+                        </Label.Triggers>-->
+                    </Label>
+               
+                <ListView SelectedItem="{Binding SelectedItem,Mode=TwoWay}"  ItemsSource="{Binding ContactList}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10" BorderColor="LightBlue" Padding="10" Margin="0,1" >
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="Frame" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                            <Setter Property="BorderColor" Value="LightGreen"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                    <StackLayout>
+                                        <Label Text="{Binding contactName[0]}" FontSize="Medium">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding contactName[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                        <Label Text="{Binding contactEmail[0]}" FontSize="Medium">
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding contactID, Converter={StaticResource isOwnerConverter}}" Value="True">
+                                                    <Setter Property="Text" Value="{Binding contactEmail[1]}"/>
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
             <Frame x:Name="emailframe"
                 Padding = "0"
@@ -15,7 +90,7 @@
                    Margin="6">
                 <Entry Placeholder="Search User Email" FontSize="15" x:Name="emailInput" Margin="0" ClearButtonVisibility="WhileEditing"/>
             </Frame>
-            <!--<ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="true" x:Name="contactsList" ItemTapped="ContactsList_ItemTapped"
+            --><!--<ListView HorizontalOptions="Fill" VerticalOptions="Fill" HasUnevenRows="true" x:Name="contactsList" ItemTapped="ContactsList_ItemTapped"
                       SeparatorVisibility="None" Margin="5,5,5,0"
                       IsVisible="False">
                 <ListView.ItemTemplate>
@@ -60,7 +135,7 @@
             </ListView>-->
             <!--<Label Text="Chat Page"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />-->
+                HorizontalOptions="CenterAndExpand" />--><!--
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

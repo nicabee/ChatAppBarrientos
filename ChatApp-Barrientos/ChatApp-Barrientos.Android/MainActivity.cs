@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Firebase;
+using Xamarin.Forms;
 
 namespace ChatApp_Barrientos.Droid
 {
@@ -17,6 +18,16 @@ namespace ChatApp_Barrientos.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            var density = Resources.DisplayMetrics.Density;
+            App.screenWidth = Resources.DisplayMetrics.WidthPixels / density;
+            App.screenHeight = Resources.DisplayMetrics.HeightPixels / density;
+
+            if (Xamarin.Forms.Device.Idiom == TargetIdiom.Phone)
+                App.screenHeight = (16 * App.screenWidth) / 9;
+
+            if (Xamarin.Forms.Device.Idiom == TargetIdiom.Tablet)
+                App.screenWidth = (9 * App.screenHeight) / 16;
 
             FirebaseApp.InitializeApp(this);
             base.OnCreate(savedInstanceState);
