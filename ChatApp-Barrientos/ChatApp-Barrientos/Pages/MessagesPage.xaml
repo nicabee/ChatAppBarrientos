@@ -92,7 +92,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand" Grid.Column="0" Padding="0">
                         <ScrollView VerticalOptions="CenterAndExpand" Margin="0">
                             <Editor Text="{Binding Message}" VerticalOptions="CenterAndExpand"
-                                    MaxLength="240" AutoSize="TextChanges" Placeholder="Write something here ..."/>
+                                    MaxLength="240" AutoSize="TextChanges" Placeholder="Write your message here..."/>
                         </ScrollView>
                     </StackLayout>
                     <Frame Grid.Column="1" BackgroundColor="Transparent" Padding="0">

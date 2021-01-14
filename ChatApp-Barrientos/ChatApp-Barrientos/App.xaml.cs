@@ -16,16 +16,7 @@ namespace ChatApp_Barrientos
         public App()
         {
             InitializeComponent();
-            //auth = DependencyService.Get<firebasebarrientos>();
-            //if (auth.IsSignIn())
-            //{
-            //    MainPage = new NavigationPage(new ChatTabbedPage());
-            //}
-            //else
-            //{
-            //    MainPage = new NavigationPage(new MainPage());
-            //}
-            //  MainPage = new NavigationPage(new MainPage());
+            
             if (dataClass.isSignedIn)
             {
                 Application.Current.MainPage = new ChatTabbedPage();

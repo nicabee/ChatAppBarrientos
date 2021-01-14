@@ -9,13 +9,11 @@
         <AbsoluteLayout>
             <StackLayout BackgroundColor="White">
 
-                <!--<Grid
-            RelativeLayout.WidthConstraint="{ConstraintExpression
-            Type=RelativeToParent,Property=Width,Factor=1}"
-            RelativeLayout.HeightConstraint="{ConstraintExpression
-            Type=RelativeToParent,Property=Height,Factor=1}">-->
-                <Image Source="mirai.jpg" Aspect="AspectFill"></Image>
-                <!--</Grid>-->
+               
+                <Image Source="mirai2.jpg" Aspect="AspectFill"
+                       HeightRequest="{Binding Converter={StaticResource scale}, ConverterParameter='height=280'}"
+                           WidthRequest="{Binding Converter={StaticResource scale}, ConverterParameter='height=280'}"/>
+               
 
 
                 <Frame x:Name="nameframe"

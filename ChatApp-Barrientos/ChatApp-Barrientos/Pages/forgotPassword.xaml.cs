@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using ChatApp_Barrientos.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Windows.Input;
 
 namespace ChatApp_Barrientos
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class forgotPassword : ContentPage
     {
+        public ICommand BackButton => new Command(async () => await Navigation.PopModalAsync(true));
         public forgotPassword()
         {
             InitializeComponent();
