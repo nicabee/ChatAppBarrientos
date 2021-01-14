@@ -2284,4 +2284,3 @@ C:\Users\Monica Barrientos\source\repos\chat3\ChatApp-Barrientos\ChatApp-Barrien
 C:\Users\Monica Barrientos\source\repos\chat3\ChatApp-Barrientos\ChatApp-Barrientos\ChatApp-Barrientos.Android\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher.png
 C:\Users\Monica Barrientos\source\repos\chat3\ChatApp-Barrientos\ChatApp-Barrientos\ChatApp-Barrientos.Android\obj\Debug\90\res\mipmap-xxxhdpi\ic_launcher_foreground.png
 C:\Users\Monica Barrientos\source\repos\chat3\ChatApp-Barrientos\ChatApp-Barrientos\ChatApp-Barrientos.Android\obj\Debug\90\res\values\ic_launcher_background.xml
-C:\Users\Monica Barrientos\source\repos\chat3\ChatApp-Barrientos\ChatApp-Barrientos\ChatApp-Barrientos.Android\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp

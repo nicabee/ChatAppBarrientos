@@ -28,22 +28,9 @@
             </Frame>
             
             <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,10">
-                <!--<Label x:Name="EmailLabel" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10" BindingContext="{x:Reference Name=chatPage}" Text="{Binding ContactListIsEmpty}"/>-->
-                <!--<Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False">-->
-
+               
                 <Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsEmpty}">
-                <!--<Label x:Name="labeler" Text="You have no contacts as of the moment." HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding IsEmpty}">
-                    <Label.Triggers>
-                        <DataTrigger TargetType="Label" Binding="{Binding IsEmpty}" Value="True">
-                            <Setter Property="IsVisible" Value="True"/>
-                        </DataTrigger>
-                    </Label.Triggers>-->
-                  
-                        <!--<Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding ContactList.Count}">
-                                <Setter Property="IsVisible" Value="true"/>
-                            </DataTrigger>
-                        </Label.Triggers>-->
+                
                     </Label>
                
                 <ListView SelectedItem="{Binding SelectedItem,Mode=TwoWay}"  ItemsSource="{Binding ContactList}" HasUnevenRows="True">

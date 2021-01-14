@@ -28,25 +28,7 @@ namespace ChatApp_Barrientos
         public string em,em1;
         public string na,na1;
         public string ps;
-        //public MainPage(string email, string name ,string pass)
-        //{
-        //    InitializeComponent();
-        //    NavigationPage.SetHasNavigationBar(this, false);
-        //    em = email;
-        //    na = name;
-        //    ps = pass;
-        //    em1 = email;
-        //    na1 = name;
-        //}
-
-        //public MainPage(string email, string name)
-        //{
-        //    InitializeComponent();
-        //    NavigationPage.SetHasNavigationBar(this, false);
-        //    em1 = email;
-        //    na1 = name;
-
-        //}
+        
 
 
 
@@ -73,15 +55,7 @@ namespace ChatApp_Barrientos
                 emailframe.BorderColor = Color.Red;
                 await DisplayAlert("Error", "Invalid Email", "Okay");
             }
-            //else if (!EmailInput.Text.Equals(em1) || !PassInput.Text.Equals(ps))
-            //{
-            //    ai.IsRunning = true;
-            //    aiLayout.IsVisible = true;
-            //    await Task.Delay(1000);
-            //    aiLayout.IsVisible = false;
-            //    ai.IsRunning = false;
-            //    await DisplayAlert("Error", "Email/Password is wrong", "Okay");
-            //}
+           
             else
             {
                 ai.IsRunning = true;
@@ -109,53 +83,11 @@ namespace ChatApp_Barrientos
                         EmailInput.Focus();
                     }
                 }
-                //if (token == "1")
-                //{
-                //    await Navigation.PushAsync(new ChatTabbedPage(na1, em1, ps), true);
-                //}
-                //else
-                //{
-                //    await DisplayAlert("Login", token + " Retry?", "Yes", "No");
-                //}
-                //if else here to move to next page after successful login
-                //  await Navigation.PushAsync(new ChatTabbedPage(na1, em1,ps), true);
+                
 
             }
         }
-        //private async void OnLogin(object sender, EventArgs args)
-        //{
-        //    try
-        //    {
-        //        ai.IsRunning = true;
-        //        aiLayout.IsVisible = true;
-        //        await Task.Delay(1000);
-        //        aiLayout.IsVisible = false;
-        //        ai.IsRunning = false;
-        //        await Navigation.PushAsync(new ChatTabbedPage(na1,em1,ps), true);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-
-        //private async void OnLoginFB(object sender, EventArgs args)
-        //{
-        //    try
-        //    {
-        //        ai.IsRunning = true;
-        //        aiLayout.IsVisible = true;
-        //        await Task.Delay(1000);
-        //        aiLayout.IsVisible = false;
-        //        ai.IsRunning = false;
-        //        await Navigation.PushAsync(new ChatTabbedPage(na1, em1,ps), true);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+       
         private async void onForgotPassword(object sender, EventArgs args)
         {
             try
@@ -165,7 +97,7 @@ namespace ChatApp_Barrientos
                 await Task.Delay(500);
                 aiLayout.IsVisible = false;
                 ai.IsRunning = false;
-                await Navigation.PushAsync(new forgotPassword(), true);
+                await Navigation.PushModalAsync(new forgotPassword(), true);
             }
             catch (Exception ex)
             {

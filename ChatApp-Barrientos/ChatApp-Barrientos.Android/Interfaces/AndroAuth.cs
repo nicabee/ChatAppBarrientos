@@ -86,8 +86,7 @@ namespace ChatApp_Barrientos.Droid
                         email = result.User.Email,
                         name = yourModel.name,
                         userType = yourModel.userType,
-                        created_at = yourModel.created_at,
-                        //
+                        created_at = yourModel.created_at,  
                         contacts = yourModel.contacts
                     };
                     dataClass.isSignedIn = true;
@@ -161,9 +160,9 @@ namespace ChatApp_Barrientos.Droid
                     email = email,
                     name = defaultName,
                     userType = 0,
-                    //
+                    
                     created_at = DateTime.UtcNow.ToString()
-                    //created_at = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
+                    
                 };
                 return response;
             }
@@ -173,112 +172,6 @@ namespace ChatApp_Barrientos.Droid
                 return response;
             }
         }
-        //public async Task<FirebaseAuthResponseModel> SignUpWithEmailPassword(string name, string email, string password)
-        //{
-        //    try
-        //    {
-        //        FirebaseAuthResponseModel response = new FirebaseAuthResponseModel() { Status = true, Response = "Sign up successful. Verification email sent." };
-        //        await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
-        //        FirebaseAuth.Instance.CurrentUser.SendEmailVerification();
-
-
-        //        int ndx = email.IndexOf("@");
-        //        int cnt = email.Length - ndx;
-        //        string defaultName = string.IsNullOrEmpty(name) ? email.Remove(ndx, cnt) : name;
-
-        //        dataClass.loggedInUser = new UserModel()
-        //        {
-        //            uid = FirebaseAuth.Instance.CurrentUser.Uid,
-        //            email = email,
-        //            name = defaultName,
-        //            userType = 0,
-        //            created_at = DateTime.UtcNow
-        //        };
-        //        return response;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        FirebaseAuthResponseModel response = new FirebaseAuthResponseModel() { Status = false, Response = ex.Message };
-        //        return response;
-        //    }
-        //}
-
-
-        //    public bool IsSignIn()
-        //    {
-        //        var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
-        //        return user != null;
-        //    }
-        //    public async Task<string> doLogin(string em, string pass)
-        //    {
-        //        string ret = "1";
-        //        try
-        //        {
-        //            var user = await FirebaseAuth.Instance.SignInWithEmailAndPasswordAsync(em, pass);
-        //            var token = await user.User.GetIdTokenAsync(false);
-        //            return ret;
-        //            //  return token.Token;
-        //        }
-        //        catch (FirebaseAuthInvalidUserException notFound)
-        //        {
-        //            return notFound.Message;
-        //        }
-        //        catch (System.Exception err)
-        //        {
-        //            return err.Message;
-        //        }
-        //    }
-
-        //    public async Task<string> doRegister(string em, string pass)
-        //    {
-        //        string ret = "1";
-        //        try
-        //        {
-        //            var user = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(em, pass);
-        //            FirebaseAuth.Instance.CurrentUser.SendEmailVerification();
-        //            var token = await user.User.GetIdTokenAsync(false);
-        //            return ret;
-        //        //    return token.Token;
-        //        }
-        //        catch (System.Exception err)
-        //        {
-        //            return err.Message;
-        //        }
-        //    }
-
-        //    public async Task<string> ResetPassword(string em)
-        //    {
-        //        string ret = "1";
-        //        try
-        //        {
-        //            await FirebaseAuth.Instance.SendPasswordResetEmailAsync(em);
-        //         //   var token = await user.User.GetIdTokenAsync(false);
-        //            return ret;
-        //            //    firebasebarrientos response = new firebasebarrientos() { Status = true, Response = "Email has been sent to your email address." };
-        //            //    await FirebaseAuth.Instance.SendPasswordResetEmailAsync(email);
-        //            //    return response;
-        //        }
-        //            catch (System.Exception err)
-        //            {
-        //            //    firebasebarrientos response = new firebasebarrientos() { Status = false, Response = ex.Message };
-        //            //    return response;
-        //            return err.Message;
-        //        }
-
-        //    }
-        //    public bool SignOut()
-        //    {
-        //        try
-        //        {
-        //            Firebase.Auth.FirebaseAuth.Instance.SignOut();
-        //            return true;
-        //        }
-        //        catch (Exception)
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //}
+        
     }
 }

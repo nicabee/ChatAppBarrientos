@@ -21,8 +21,9 @@ namespace ChatApp_Barrientos
         private async void send_email(object sender, EventArgs e)
         {
 
-            if (sendemail.Text.Length == 0)
+            if (string.IsNullOrEmpty(ForgotPasswordInput.Text))
             {
+                forgotpassframe.BorderColor = Color.Red;
                 await DisplayAlert("Error", "Missing fields", "Okay");
             }
             else
@@ -34,7 +35,6 @@ namespace ChatApp_Barrientos
                 ai.IsRunning = false;
                 FirebaseAuthResponseModel res = new FirebaseAuthResponseModel() { };
                 res = await DependencyService.Get<firebasebarrientos>().ResetPassword(ForgotPasswordInput.Text);
-                //   await DisplayAlert("asd", ForgotPasswordInput.Text, "ok");
                 if (res.Status == true)
                 {
                     await DisplayAlert("Success", res.Response, "Okay");
@@ -45,6 +45,11 @@ namespace ChatApp_Barrientos
                     await DisplayAlert("Error", res.Response, "Okay");
                 }
             }
+
+        }
+        void StartCall1(object sender, EventArgs args)
+        {
+            forgotpassframe.BorderColor = Color.Black;
 
         }
     }

@@ -15,28 +15,29 @@
             <converter:IsViewerConverter x:Key="isViewerConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" BackgroundColor="#1976D2" Margin="0" Padding="10,5">
+            <Frame Grid.Row="0" BackgroundColor="White" Margin="0" Padding="10,5">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="{Binding ConversationPartner.contactName[0]}" FontSize="Title" TextColor="White"
+                    <Label Text="{Binding convoers[0]}" FontSize="Title" TextColor="Black"
                            VerticalOptions="Center" FontAttributes="Bold" HorizontalOptions="StartAndExpand">
                         <Label.Triggers>
-                            <DataTrigger TargetType="Label" Binding="{Binding ConversationPartner.contactID[1], Converter={StaticResource isViewerConverter}}" Value="False">
-                                <Setter Property="Text"  Value="{Binding ConversationPartner.contactName[1]}"/>
+                            <DataTrigger TargetType="Label" Binding="{Binding convoers[2], Converter={StaticResource isViewerConverter}}" Value="False">
+                                <Setter Property="Text"  Value="{Binding convoers[1]}"/>
                             </DataTrigger>
                         </Label.Triggers>
                     </Label>
                     <Label Text="&#215;" FontAttributes="Bold" 
                            FontSize="Title"
                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
-                           TextColor="White">
+                           TextColor="Black">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding PopModalCommand}"/>
+                            <TapGestureRecognizer Command="{Binding CloseMsg}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </StackLayout>

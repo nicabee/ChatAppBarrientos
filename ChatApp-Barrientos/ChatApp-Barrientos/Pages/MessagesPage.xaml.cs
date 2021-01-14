@@ -18,16 +18,17 @@ namespace ChatApp_Barrientos
 public partial class MessagesPage : ContentPage
 {
         DataClass dataClass = DataClass.GetInstance;
-        public ICommand PopModalCommand => new Command(async () => await Navigation.PopModalAsync(true));
+        public ICommand CloseMsg => new Command(async () => await Navigation.PopModalAsync(true));
         public ICommand SendCommand => new Command(Send);
+        public ContactModel ConversationPartner { get; set; }
+        //ContactModel ConversationPartner;
         
-        ContactModel ConversationPartner;
         public MessagesPage(ContactModel input)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             ConversationsList = new ObservableCollection<ConversationModel>();
-            //ContactModel ConversationPartner = new ContactModel();
+            convoers = new ObservableCollection<string> {input.contactName[0], input.contactName[1], input.contactID[1] };
             ConversationPartner = input;
             CrossCloudFirestore.Current
                 .Instance.GetCollection("contacts")
@@ -76,7 +77,8 @@ public partial class MessagesPage : ContentPage
                     }
                 });
         }
-
+        
+        
         private ObservableCollection<ConversationModel> conversationsList;
         public ObservableCollection<ConversationModel> ConversationsList
         {
@@ -88,9 +90,13 @@ public partial class MessagesPage : ContentPage
                 OnPropertyChanged(nameof(ConversationsList));
             }
         }
-
-        
-
+       
+        private ObservableCollection<string> _convoers;
+        public ObservableCollection<string> convoers
+        {
+            get { return _convoers; }
+            set { _convoers = value; OnPropertyChanged(nameof(convoers)); }
+        }
         private string message;
         public string Message
         {
@@ -118,6 +124,7 @@ public partial class MessagesPage : ContentPage
 
         private async void Send()
         {
+            
             Guid guid = Guid.NewGuid();
             string ID = guid.ToString();
             ConversationModel conversationObject = new ConversationModel()
